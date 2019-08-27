@@ -1,2 +1,2 @@
 # Huffman
-Compress/Decompress Files, Huffman Algorithm
+Compress/Decompress Files, Huffman Algorithm.
