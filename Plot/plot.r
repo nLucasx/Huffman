@@ -1,19 +1,16 @@
 library(ggplot2)
 
-result <- read.table("//home//alunoic//Ãrea de Trabalho//Huffman//output.txt", header = T)
+result <- read.table("colocar o caminho do arquivo de entrada", header = T)
 head(result)
 plot(result$Index, 
      result$List,
-     type = "l",
+     type = "o",
      col = "blue",
-     lwd = 1, 
-     xlab = "Elementos",
-     ylab = "IteraÃ§Ãµes",
-     main = "Fila vs heap")
+     lwd = 2, 
+     xlab = "Tamanho N",
+     ylab = "Iterações",
+     main = "Fila com Lista vs Heap")
 
-lines(result$Index, result$Heap, type="l", col = "red", lwd = 1)
+lines(result$Index, result$Heap, type="o", col = "orange", lwd = 2)
 legend("topleft", legend=c("Lista", "Heap"),
-       col=c("blue", "red"),  lty = 30, cex = 0.8)
-
-
-
+       col=c("blue", "orange"),  lty = 30, cex = 0.8)
