@@ -86,25 +86,25 @@ void build_min_heap(HEAP *heap, long long int *frequency)
 }
 void min_heapify(HEAP *heap, int i)
 {
-	int largest;
+	int smallest;
 	int left_index = get_left_index(i);
 	int right_index = get_right_index(i);
 	if (left_index <= heap->size && heap->data[left_index]->frequency < heap->data[i]->frequency)
 	{
-		largest = left_index;
+		smallest = left_index;
 	} 
 	else 
 	{
-		largest = i;
+		smallest = i;
 	}
-	if (right_index <= heap->size && heap->data[right_index]->frequency < heap->data[largest]->frequency)
+	if (right_index <= heap->size && heap->data[right_index]->frequency < heap->data[smallest]->frequency)
 	{
-		largest = right_index;
+		smallest = right_index;
 	}
-	if (heap->data[i]->c != heap->data[largest]->c)
+	if (heap->data[i]->c != heap->data[smallest]->c)
 	{
-		swapNode(heap, i, largest);
-		min_heapify(heap, largest);
+		swapNode(heap, i, smallest);
+		min_heapify(heap, smallest);
 	}
 }
 long long int *return_frequency(FILE *input)
