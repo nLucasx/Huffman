@@ -46,7 +46,7 @@ int Astar(GRAPH *graph, int begin, int end)
 			}
 		}
 	}
-	printf("distancia : %d\n", calculate_distance(dequeued));
+	return calculate_distance(dequeued);
 	print_way(dequeued);
 	printf("\n\n");
 	return 1;
