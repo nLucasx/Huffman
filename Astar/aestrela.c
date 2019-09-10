@@ -44,7 +44,7 @@ int main()
 		}
 	}
 
-	Astar(new_graph, begin, end);
+	printf("%d\n",Astar(new_graph, begin, end));
 
 	
 }
