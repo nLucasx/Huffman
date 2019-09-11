@@ -1,3 +1,9 @@
+/*
+ 
+ * This file will declare all structures used in the program. 
+
+*/
+
 typedef struct TREE
 {
 	void *c;
