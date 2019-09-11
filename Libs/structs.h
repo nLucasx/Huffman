@@ -15,7 +15,7 @@ typedef struct TREE
 typedef struct HEAP
 {
 	int size;
-	TREE *data[257];
+	void *data[257];
 }HEAP;
 
 typedef struct HASH

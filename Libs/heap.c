@@ -43,7 +43,7 @@ void enqueue(HEAP *heap, TREE *item)
 		heap->data[++heap->size] = item;
 		int key_index = heap->size;
 		int parent_index = get_parent_index(heap->size); 
-		while (parent_index >= 1 && heap->data[key_index]->frequency < heap->data[parent_index]->frequency)
+		while (parent_index >= 1 && ((TREE *)heap->data[key_index])->frequency < ((TREE *)heap->data[parent_index])->frequency)
 		{
 			swapNode(heap, key_index, parent_index);
 			key_index = parent_index;
@@ -89,7 +89,7 @@ void min_heapify(HEAP *heap, int i)
 	int smallest;
 	int left_index = get_left_index(i);
 	int right_index = get_right_index(i);
-	if (left_index <= heap->size && heap->data[left_index]->frequency < heap->data[i]->frequency)
+	if (left_index <= heap->size && ((TREE *)heap->data[left_index])->frequency < ((TREE *)heap->data[i])->frequency)
 	{
 		smallest = left_index;
 	} 
@@ -97,11 +97,11 @@ void min_heapify(HEAP *heap, int i)
 	{
 		smallest = i;
 	}
-	if (right_index <= heap->size && heap->data[right_index]->frequency < heap->data[smallest]->frequency)
+	if (right_index <= heap->size && ((TREE *)heap->data[right_index])->frequency < ((TREE *)heap->data[smallest])->frequency)
 	{
 		smallest = right_index;
 	}
-	if (heap->data[i]->c != heap->data[smallest]->c)
+	if (((TREE *)heap->data[i])->c != ((TREE *)heap->data[smallest])->c)
 	{
 		swapNode(heap, i, smallest);
 		min_heapify(heap, smallest);
